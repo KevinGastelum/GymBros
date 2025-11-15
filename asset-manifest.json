@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gymbros/static/css/main.625c832b.css",
+    "main.js": "/gymbros/static/js/main.c5757876.js",
+    "static/js/835.f686ffe9.chunk.js": "/gymbros/static/js/835.f686ffe9.chunk.js",
+    "index.html": "/gymbros/index.html",
+    "main.625c832b.css.map": "/gymbros/static/css/main.625c832b.css.map",
+    "main.c5757876.js.map": "/gymbros/static/js/main.c5757876.js.map",
+    "835.f686ffe9.chunk.js.map": "/gymbros/static/js/835.f686ffe9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.625c832b.css",
+    "static/js/main.c5757876.js"
+  ]
+}
