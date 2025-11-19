@@ -173,7 +173,8 @@ const Hero = () => {
     <section
       className="relative h-[90vh] bg-cover bg-center flex items-center justify-center"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/images/hero.jpg'})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL}/images/hero.jpg)`,
+        // backgroundImage: `url(${process.env.PUBLIC_URL + '/images/hero.jpg'})`,
         backgroundAttachment: "fixed",
       }}
     >
