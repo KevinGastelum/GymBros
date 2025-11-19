@@ -188,7 +188,7 @@ const Hero = () => {
         className="relative z-10 text-center px-6"
       >
         <h1 className="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
-          Train Hard. <span className="text-gymGold">Look Good.</span>
+          Train Hard. <span className="bg-gradient-to-r from-yellow-600 via-yellow-300 to-yellow-600 bg-clip-text text-transparent">Look Good.</span>
         </h1>
 
         {/* Typewriter text */}
@@ -199,9 +199,9 @@ const Hero = () => {
 
         <Link
           to="/shop"
-          className="inline-block mt-10 px-10 py-4 text-lg font-semibold text-white bg-gymGold rounded-xl shadow-lg
+          className="inline-block mt-10 px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-yellow-600 via-yellow-300 to-yellow-600 rounded-xl shadow-lg
           transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,215,0,0.8)]
-          hover:bg-yellow-500 active:scale-95"
+          hover:from-yellow-500 hover:to-yellow-500 active:scale-95"
         >
           Shop Now
         </Link>

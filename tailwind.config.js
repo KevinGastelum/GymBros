@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gymGold: "#FFD700",
+        gymGold: "transparent",
+        goldMetallic: "linear-gradient(145deg, #B8860B, #FFD700, #B8860B)",
         darkGray: "#121212",
         lightGray: "#F5F5F5",
       },
