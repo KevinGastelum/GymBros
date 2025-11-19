@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/GymBros/static/css/main.625c832b.css",
-    "main.js": "/GymBros/static/js/main.327c49eb.js",
-    "static/js/835.f686ffe9.chunk.js": "/GymBros/static/js/835.f686ffe9.chunk.js",
-    "index.html": "/GymBros/index.html",
-    "main.625c832b.css.map": "/GymBros/static/css/main.625c832b.css.map",
-    "main.327c49eb.js.map": "/GymBros/static/js/main.327c49eb.js.map",
-    "835.f686ffe9.chunk.js.map": "/GymBros/static/js/835.f686ffe9.chunk.js.map"
+    "main.css": "/static/css/main.625c832b.css",
+    "main.js": "/static/js/main.1733f139.js",
+    "static/js/835.f686ffe9.chunk.js": "/static/js/835.f686ffe9.chunk.js",
+    "index.html": "/index.html",
+    "main.625c832b.css.map": "/static/css/main.625c832b.css.map",
+    "main.1733f139.js.map": "/static/js/main.1733f139.js.map",
+    "835.f686ffe9.chunk.js.map": "/static/js/835.f686ffe9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.625c832b.css",
-    "static/js/main.327c49eb.js"
+    "static/js/main.1733f139.js"
   ]
 }
