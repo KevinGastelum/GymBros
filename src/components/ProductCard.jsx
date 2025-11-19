@@ -10,10 +10,10 @@ const ProductCard = ({ product }) => (
     />
     <h3 className="text-lg font-semibold">{product.name}</h3>
     <p className="text-gray-400 text-sm mb-2">{product.category}</p>
-    <p className="text-gymRed font-bold mb-4">${product.price}</p>
+    <p className="text-gymGold font-bold mb-4">${product.price}</p>
     <Link
       to={`/product/${product.id}`}
-      className="bg-gymRed text-white px-4 py-2 rounded hover:bg-red-700 transition"
+      className="bg-gymGold text-white px-4 py-2 rounded hover:bg-yellow-500 transition"
     >
       View Details
     </Link>

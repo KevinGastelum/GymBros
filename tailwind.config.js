@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gymRed: "#E50914",
+        gymGold: "#FFD700",
         darkGray: "#121212",
         lightGray: "#F5F5F5",
       },

@@ -11,7 +11,7 @@ const ProductDetails = () => {
     return (
       <div className="py-20 text-center text-gray-400">
         <p>Product not found.</p>
-        <Link to="/shop" className="text-gymRed underline hover:text-red-600">
+        <Link to="/shop" className="text-gymGold underline hover:text-yellow-500">
           Go back to shop
         </Link>
       </div>
@@ -35,7 +35,7 @@ const ProductDetails = () => {
         <p className="text-gray-400 mb-2 uppercase text-sm">
           {product.category}
         </p>
-        <p className="text-gymRed text-2xl font-bold mb-6">${product.price}</p>
+        <p className="text-gymGold text-2xl font-bold mb-6">${product.price}</p>
         <p className="text-gray-300 mb-8 leading-relaxed">
           {product.description}
         </p>
@@ -50,8 +50,8 @@ const ProductDetails = () => {
                 onClick={() => setSelectedSize(size)}
                 className={`px-4 py-2 rounded border ${
                   selectedSize === size
-                    ? "bg-gymRed border-gymRed text-white"
-                    : "border-gray-500 text-gray-300 hover:border-gymRed"
+                    ? "bg-gymGold border-gymGold text-white"
+                    : "border-gray-500 text-gray-300 hover:border-gymGold"
                 } transition`}
               >
                 {size}
@@ -65,7 +65,7 @@ const ProductDetails = () => {
           disabled={!selectedSize}
           className={`w-full md:w-auto px-8 py-3 rounded-lg text-white font-semibold transition ${
             selectedSize
-              ? "bg-gymRed hover:bg-red-700"
+              ? "bg-gymGold hover:bg-yellow-500"
               : "bg-gray-700 cursor-not-allowed"
           }`}
         >
