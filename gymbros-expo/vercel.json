@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/product/:id", "destination": "/product/[id].html" }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
