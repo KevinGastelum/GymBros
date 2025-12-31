@@ -76,7 +76,7 @@ export default function CartScreen() {
                   <View className="flex-row items-center justify-between">
                     <View className="flex-row items-center bg-white/10 rounded-full px-2 py-1">
                       <Pressable
-                        onPress={() => updateQuantity(item.id, item.quantity - 1)}
+                        onPress={() => updateQuantity(item.id, item.size, item.quantity - 1)}
                         className="p-1.5"
                       >
                         <Minus color="#fff" size={14} />
@@ -85,7 +85,7 @@ export default function CartScreen() {
                         {item.quantity}
                       </Text>
                       <Pressable
-                        onPress={() => updateQuantity(item.id, item.quantity + 1)}
+                        onPress={() => updateQuantity(item.id, item.size, item.quantity + 1)}
                         className="p-1.5"
                       >
                         <Plus color="#fff" size={14} />
@@ -97,7 +97,7 @@ export default function CartScreen() {
                   </View>
                 </View>
                 <Pressable
-                  onPress={() => removeFromCart(item.id)}
+                  onPress={() => removeFromCart(item.id, item.size)}
                   className="p-2 -mr-2 -mt-2"
                 >
                   <Trash2 color="#ff4444" size={18} />
