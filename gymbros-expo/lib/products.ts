@@ -82,7 +82,7 @@ export const PRODUCTS: Record<string, Product> = {
     description:
       "Diseñada para mostrar tu progreso. Esta tank top de corte muscle fit resalta tu físico mientras te mantiene fresco durante los entrenamientos más intensos.",
     images: [
-      "https://images.unsplash.com/photo-1583500178450-e59e4309b57a?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=800&auto=format&fit=crop",
     ],
     sizes: ["S", "M", "L", "XL"],
     features: [
@@ -101,7 +101,7 @@ export const PRODUCTS: Record<string, Product> = {
     description:
       "Libertad de movimiento total. Estos shorts de alto rendimiento cuentan con tela elástica y bolsillos seguros para tus llaves y teléfono.",
     images: [
-      "https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521805103424-d8f8430e8933?q=80&w=800&auto=format&fit=crop",
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
     features: [
@@ -286,20 +286,20 @@ export const PRODUCTS: Record<string, Product> = {
   },
   "15": {
     id: "15",
-    name: "Botella Premium 1L",
-    price: 450.0,
+    name: "Thermo Premium",
+    price: 650.0,
     category: "Accesorios",
     description:
-      "Hidratación elegante. Botella de acero inoxidable de doble pared que mantiene tus bebidas frías por 24 horas o calientes por 12.",
+      "Mantén tu hidratación a la temperatura perfecta. Este termo de acero inoxidable premium mantiene tus bebidas frías por 24 horas o calientes por 12 horas.",
     images: [
-      "https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?q=80&w=800&auto=format&fit=crop",
     ],
-    sizes: ["1L"],
+    sizes: ["500ml", "750ml", "1L"],
     features: [
-      "Acero inoxidable 18/8",
-      "Doble pared aislante",
-      "Tapa a prueba de fugas",
-      "Libre de BPA",
+      "Acero inoxidable premium",
+      "Tecnología de doble pared al vacío",
+      "Tapa hermética anti-derrames",
+      "Diseño ergonómico",
     ],
   },
   "16": {
