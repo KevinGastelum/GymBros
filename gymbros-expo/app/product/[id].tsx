@@ -81,14 +81,14 @@ export default function ProductDetailScreen() {
         </View>
 
         {/* Product Image Carousel */}
-        <View className="h-[550px] w-full relative">
+        <View className="h-[400px] w-full relative">
           <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}>
             {product.images.map((img: string, idx: number) => (
-              <View key={idx} style={{ width: Dimensions.get('window').width, height: 550 }}>
+              <View key={idx} style={{ width: Dimensions.get('window').width, height: 400 }}>
                 <ZoomableImage
                   source={{ uri: img }}
                   width={Dimensions.get('window').width}
-                  height={550}
+                  height={400}
                 >
                   <LinearGradient 
                      colors={['transparent', '#000000']} 

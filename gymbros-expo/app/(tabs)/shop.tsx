@@ -35,10 +35,10 @@ export default function ShopScreen() {
       <SafeAreaView className="flex-1" edges={['top']}>
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
           {/* Header */}
-          <View className="px-6 pt-4 pb-2">
-             {/* Logo Row */}
-             <View className="flex-row justify-end mb-4">
-                <Text className="text-lg font-black text-white tracking-tighter">
+          <View className="px-6 pt-6 pb-2">
+             {/* Logo Row - Centered */}
+             <View className="flex-row justify-center mb-6">
+                <Text className="text-xl font-black text-white tracking-tighter">
                     GYM<Text className="text-primary italic">BROS</Text>
                 </Text>
              </View>
