@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "cd gymbros-expo && npx expo export --platform web",
+  "outputDirectory": "gymbros-expo/dist",
+  "installCommand": "cd gymbros-expo && npm install",
+  "rewrites": [
+    { "source": "/product/:id", "destination": "/product/[id].html" }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
