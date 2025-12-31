@@ -19,122 +19,11 @@ import {
 } from "lucide-react-native";
 import { useCart } from "../../contexts/CartContext";
 import { LinearGradient } from "expo-linear-gradient";
+import ZoomableImage from "../../components/ZoomableImage";
+import { PRODUCTS } from "../../lib/products";
+import { useCurrency } from "../../lib/currency";
 
 const { width } = Dimensions.get("window");
-
-const PRODUCTS: Record<string, any> = {
-  "1": {
-    id: "1",
-    name: "Sudadera Oversized Esencial",
-    price: 1100.0,
-    category: "Lifestyle Hombres",
-    description:
-      "La combinación perfecta de comodidad y estilo. Nuestra Sudadera Oversized Esencial está confeccionada con una mezcla de algodón premium para una suavidad inigualable.",
-    images: [
-      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=800&auto=format&fit=crop",
-    ],
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-    features: [
-      "Mezcla premium de algodón y poliéster",
-      "Ajuste relajado oversized",
-      "Puños y dobladillo acanalados",
-      "Bolsillo canguro",
-    ],
-  },
-  "2": {
-    id: "2",
-    name: "Mallas Seamless High-Rise",
-    price: 900.0,
-    category: "Performance Mujeres",
-    description:
-      "Diseñadas para el máximo rendimiento. Estas mallas sin costuras de cintura alta brindan compresión donde más la necesitas.",
-    images: [
-      "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?q=80&w=800&auto=format&fit=crop",
-    ],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    features: [
-      "Construcción sin costuras",
-      "Cintura alta",
-      "Tejido a prueba de sentadillas",
-      "Absorción de humedad",
-    ],
-  },
-  "3": {
-    id: "3",
-    name: "Set Deportivo Pink",
-    price: 1300.0,
-    category: "Performance Mujeres",
-    description:
-      "Destaca en el gimnasio con este set coordinado de alto rendimiento. Incluye top deportivo de soporte medio y leggings con tecnología seamless para máxima comodidad.",
-    images: [
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop",
-    ],
-    sizes: ["XS", "S", "M", "L"],
-    features: [
-      "Tecnología absorbe-sudor",
-      "Tejido elástico 4-way stretch",
-      "Soporte medio compresivo",
-      "Cintura alta favorecedora",
-    ],
-  },
-  "4": {
-    id: "4",
-    name: "Sudadera Gym Pro",
-    price: 1200.0,
-    category: "Lifestyle Hombres",
-    description:
-      "Tu compañera ideal para entrar en calor o para el día a día. Esta sudadera técnica combina estilo urbano con funcionalidad deportiva.",
-    images: [
-      "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=800&auto=format&fit=crop",
-    ],
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    features: [
-      "Interior de felpa suave",
-      "Capucha ajustable",
-      "Bolsillo frontal grande",
-      "Transpirable y cálida",
-    ],
-  },
-  "5": {
-    id: "5",
-    name: "Cinturón de Levantamiento",
-    price: 1500.0,
-    category: "Accesorios",
-    description:
-      "Soporte profesional para tus levantamientos más pesados. Fabricado con cuero premium de 10mm para máxima estabilidad del core.",
-    images: [
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop",
-    ],
-    sizes: ["S", "M", "L", "XL"],
-    features: [
-      "Cuero genuino de 10mm",
-      "Hebilla de acero inoxidable",
-      "Ancho uniforme de 10cm",
-      "Costuras reforzadas",
-    ],
-  },
-  "6": {
-    id: "6",
-    name: "Pantalones Deportivos Track",
-    price: 1200.0,
-    category: "Entrenamiento Hombres",
-    description:
-      "Versatilidad para dentro y fuera del gym. Estos pantalones track combinan comodidad premium con un look atlético moderno.",
-    images: [
-      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=800&auto=format&fit=crop",
-    ],
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    features: [
-      "Tela elástica 4 direcciones",
-      "Bolsillos con cierre",
-      "Cintura elástica con cordón",
-      "Puños elásticos",
-    ],
-  },
-};
-
-import { useCurrency } from "../../lib/currency";
 
 export default function ProductDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -196,15 +85,16 @@ export default function ProductDetailScreen() {
           <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}>
             {product.images.map((img: string, idx: number) => (
               <View key={idx} style={{ width: Dimensions.get('window').width, height: 550 }}>
-                <Image
+                <ZoomableImage
                   source={{ uri: img }}
-                  className="w-full h-full"
-                  resizeMode="cover"
-                />
-                <LinearGradient 
-                   colors={['transparent', '#000000']} 
-                   style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 150 }} 
-                />
+                  width={Dimensions.get('window').width}
+                  height={550}
+                >
+                  <LinearGradient 
+                     colors={['transparent', '#000000']} 
+                     style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 150 }} 
+                  />
+                </ZoomableImage>
               </View>
             ))}
           </ScrollView>

@@ -20,45 +20,11 @@ import Animated, {
 } from "react-native-reanimated";
 import ProductCard from "../../components/ProductCard";
 import { useCart } from "../../contexts/CartContext";
+import { getFeaturedProducts } from "../../lib/products";
 
 const { width, height } = Dimensions.get("window");
 
-const FEATURED_PRODUCTS = [
-  {
-    id: "1",
-    name: "Oversized Pump Cover",
-    price: 1100.0,
-    category: "Lifestyle",
-    image:
-      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600&auto=format&fit=crop",
-    isNew: true,
-  },
-  {
-    id: "2",
-    name: "Seamless High-Rise",
-    price: 900.0,
-    category: "Performance",
-    image:
-      "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?q=80&w=600&auto=format&fit=crop",
-    isNew: true,
-  },
-  {
-    id: "3",
-    name: "Pro Compression Tee",
-    price: 700.0,
-    category: "Training",
-    image:
-      "https://images.unsplash.com/photo-1581009146145-b5ef03a7403f?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    id: "4",
-    name: "Matte Black Bottle",
-    price: 500.0,
-    category: "Accessories",
-    image:
-      "https://images.unsplash.com/photo-1602143303410-7199ec42ac0a?q=80&w=600&auto=format&fit=crop",
-  },
-];
+const FEATURED_PRODUCTS = getFeaturedProducts();
 
 const CATEGORIES = [
   {
@@ -89,33 +55,67 @@ export default function HomeScreen() {
     scrollY.value = event.contentOffset.y;
   });
 
+  // Background image parallax - moves SLOWER than scroll (0.3x rate)
   const heroStyle = useAnimatedStyle(() => {
     const scale = interpolate(
       scrollY.value,
       [-100, 0, 450],
-      [1.2, 1, 1], 
+      [1.3, 1.1, 1], // Slightly larger to allow room for parallax movement
+      Extrapolation.CLAMP
+    );
+    const translateY = interpolate(
+      scrollY.value,
+      [0, height],
+      [0, height * 0.3], // Moves at 30% of scroll speed (slower = depth)
       Extrapolation.CLAMP
     );
     return {
-      transform: [{ scale }],
+      transform: [{ scale }, { translateY }],
     };
   });
 
-  const textStyle = useAnimatedStyle(() => {
+  // Logo parallax - moves at MEDIUM speed (0.5x rate)
+  const logoParallaxStyle = useAnimatedStyle(() => {
     const translateY = interpolate(
       scrollY.value,
-      [0, 200],
-      [0, -100], 
+      [0, 300],
+      [0, 150], // Moves at 50% of scroll speed
       Extrapolation.CLAMP
     );
     const opacity = interpolate(
       scrollY.value,
-      [0, 600], // Extended fade out to keep text visible longer
+      [0, 200],
       [1, 0],
       Extrapolation.CLAMP
     );
     return {
       transform: [{ translateY }],
+      opacity,
+    };
+  });
+
+  // Foreground text parallax - moves FASTER than image but still creates depth
+  const textStyle = useAnimatedStyle(() => {
+    const translateY = interpolate(
+      scrollY.value,
+      [0, 400],
+      [0, -200], // Moves UP as user scrolls down (opposite direction for pop effect)
+      Extrapolation.CLAMP
+    );
+    const opacity = interpolate(
+      scrollY.value,
+      [0, 500],
+      [1, 0],
+      Extrapolation.CLAMP
+    );
+    const scale = interpolate(
+      scrollY.value,
+      [0, 300],
+      [1, 0.9], // Slightly shrinks as it fades
+      Extrapolation.CLAMP
+    );
+    return {
+      transform: [{ translateY }, { scale }],
       opacity,
     };
   });
@@ -172,8 +172,8 @@ export default function HomeScreen() {
                style={{ position: 'absolute', left: 0, right: 0, top: 0, height: 180, opacity: 0.9 }}
             />
             
-            {/* Initial Header Overlay */}
-            <View className="absolute top-14 left-6 z-10 flex-row">
+            {/* Initial Header Overlay with Parallax */}
+            <Animated.View style={[logoParallaxStyle, { position: 'absolute', top: 56, left: 24, zIndex: 10, flexDirection: 'row' }]}>
                <Animated.Text 
                  entering={FadeInUp.duration(1000).delay(300).springify().damping(12)}
                  className="text-2xl font-black text-white tracking-tighter shadow-lg"
@@ -181,7 +181,7 @@ export default function HomeScreen() {
                >
                   GYM<Text className="text-primary italic">BROS</Text>
                </Animated.Text>
-            </View>
+            </Animated.View>
 
             <Animated.View style={[textStyle, { zIndex: 50, position: 'absolute', bottom: 120, left: 0, right: 0 }]} className="p-8">
                <View className="flex-row mb-4">

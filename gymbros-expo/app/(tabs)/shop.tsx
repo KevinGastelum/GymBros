@@ -3,59 +3,9 @@ import { View, Text, ScrollView, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useLocalSearchParams } from "expo-router";
 import ProductCard from "../../components/ProductCard";
+import { getShopProducts } from "../../lib/products";
 
-const PRODUCTS = [
-  {
-    id: "1",
-    name: "Sudadera Oversized Esencial",
-    price: 1100.0,
-    category: "Lifestyle Hombres",
-    image:
-      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600&auto=format&fit=crop",
-    isNew: true,
-  },
-  {
-    id: "2",
-    name: "Mallas Seamless High-Rise",
-    price: 900.0,
-    category: "Performance Mujeres",
-    image:
-      "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?q=80&w=600&auto=format&fit=crop",
-    isNew: true,
-  },
-  {
-    id: "3",
-    name: "Set Deportivo Pink",
-    price: 1300.0,
-    category: "Performance Mujeres",
-    image:
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    id: "4",
-    name: "Sudadera Gym Pro",
-    price: 1200.0,
-    category: "Lifestyle Hombres",
-    image:
-      "https://images.unsplash.com/photo-1509942774463-acf339cf87d5?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    id: "5",
-    name: "Cinturón de Levantamiento",
-    price: 1500.0,
-    category: "Accesorios",
-    image:
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop",
-  },
-  {
-    id: "6",
-    name: "Pantalones Deportivos Track",
-    price: 1200.0,
-    category: "Entrenamiento Hombres",
-    image:
-      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=600&auto=format&fit=crop",
-  },
-];
+const PRODUCTS = getShopProducts();
 
 const FILTERS = ["Todos", "Hombres", "Mujeres", "Accesorios"];
 
