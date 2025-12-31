@@ -1,8 +1,10 @@
 {
+  "buildCommand": "npx expo export --platform web",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
   "rewrites": [
     { "source": "/product/:id", "destination": "/product/[id].html" }
   ],
   "cleanUrls": true,
-  "trailingSlash": false,
-  "outputDirectory": "dist"
+  "trailingSlash": false
 }
