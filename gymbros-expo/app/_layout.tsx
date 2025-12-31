@@ -8,11 +8,11 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <CartProvider>
-        <StatusBar style="light" />
+        <StatusBar style="dark" />
         <Stack
           screenOptions={{
             headerShown: false,
-            contentStyle: { backgroundColor: "#000000" },
+            contentStyle: { backgroundColor: "#ffffff" },
             animation: "slide_from_right",
           }}
         >

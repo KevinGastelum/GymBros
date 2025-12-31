@@ -8,13 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#000000",
-        foreground: "#ffffff",
+        background: "#ffffff",
+        foreground: "#0a0a0a",
         primary: "#c4fb6d",
-        secondary: "#111111",
-        accent: "#888888",
-        card: "#0a0a0a",
-        border: "#1a1a1a",
+        secondary: "#f5f5f7",
+        accent: "#f5f5f7",
+        card: "#ffffff",
+        border: "#e6e6e6",
+        muted: "#f5f5f7",
       },
       fontFamily: {
         sans: ["Inter", "System"],

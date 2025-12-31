@@ -1,34 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
-  --primary: #c4fb6d; /* Electric Lime/Green for highlights */
-  --secondary: #f5f5f5;
-  --accent: #666666;
-  --card: #ffffff;
-  --card-foreground: #111111;
-  --border: #e5e5e5;
+  /* Base - New Shuttle-inspired Palette */
+  --background: #ffffff; /* Clean White */
+  --foreground: #0a0a0a; /* Deep Black */
+  
+  /* Brand Colors */
+  --primary: #c4fb6d; /* Electric Lime - Retained Brand Identity */
+  --primary-foreground: #000000;
+  
+  /* UI Grays */
+  --secondary: #f5f5f7; /* Light Gray Surface */
+  --secondary-foreground: #1d1d1f;
+  
+  --muted: #f5f5f7;
+  --muted-foreground: #86868b;
+  
+  --accent: #f5f5f7;
+  --accent-foreground: #1d1d1f;
+  
+  /* Borders & Dividers */
+  --border: #e6e6e6;
+  --input: #e6e6e6;
   --ring: #c4fb6d;
+  
+  /* Interactive */
+  --radius-lg: 1.5rem;   /* 24px - Rounded */
+  --radius-md: 1rem;     /* 16px */
+  --radius-sm: 0.75rem;  /* 12px */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+  --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
+  --color-input: var(--input);
   --color-ring: var(--ring);
   
-  --font-sans: 'Inter', var(--font-geist-sans), sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
   
-  --radius-lg: 0.5rem;
-  --radius-md: calc(0.5rem - 2px);
-  --radius-sm: calc(0.5rem - 4px);
+  --radius-lg: var(--radius-lg);
+  --radius-md: var(--radius-md);
+  --radius-sm: var(--radius-sm);
+  
+  /* Custom Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,102 +62,74 @@
     --background: #000000;
     --foreground: #ffffff;
     --primary: #c4fb6d;
+    --primary-foreground: #000000;
     --secondary: #111111;
-    --accent: #888888;
-    --card: #0a0a0a;
-    --card-foreground: #ffffff;
-    --border: #1a1a1a;
+    --secondary-foreground: #e5e5e5;
+    --muted: #1a1a1a;
+    --muted-foreground: #a1a1aa;
+    --accent: #111111;
+    --accent-foreground: #e5e5e5;
+    --border: #27272a;
+    --input: #27272a;
   }
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Glassmorphism Utility */
+/* Glassmorphism Utilities */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .dark .glass {
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hide scrollbar for Chrome, Safari, Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
-/* Hide scrollbar for IE, Edge, Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.dark .glass-panel {
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
-/* Mobile Touch Improvements */
-@media (hover: none) {
-  .hover\:scale-105:active {
-    transform: scale(0.98);
-  }
+/* Utility Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-/* Page Transition Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.5s ease-out forwards;
-}
-
-/* Skeleton Loading */
 @keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+  from { background-position: 0 0; }
+  to { background-position: -200% 0; }
 }
 
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    var(--secondary) 25%,
-    var(--border) 50%,
-    var(--secondary) 75%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Focus States for Accessibility */
+/* Focus Visible */
 :focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* Button Active States on Mobile */
-button:active,
-a:active {
-  transform: scale(0.98);
-}
