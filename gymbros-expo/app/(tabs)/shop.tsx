@@ -35,20 +35,20 @@ export default function ShopScreen() {
       <SafeAreaView className="flex-1" edges={['top']}>
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
           {/* Header */}
-          <View className="px-6 py-8 flex-row justify-between items-end">
-             <View>
-                <Text className="text-4xl font-black text-white uppercase tracking-tighter mb-2">
-                TIENDA
-                </Text>
-                <Text className="text-gray-400 font-medium tracking-wide">
-                Descubre nuestra colección completa
-                </Text>
-             </View>
-             <View>
+          <View className="px-6 pt-4 pb-2">
+             {/* Logo Row */}
+             <View className="flex-row justify-end mb-4">
                 <Text className="text-lg font-black text-white tracking-tighter">
                     GYM<Text className="text-primary italic">BROS</Text>
                 </Text>
              </View>
+             {/* Title */}
+             <Text className="text-4xl font-black text-white uppercase tracking-tighter mb-2">
+               TIENDA
+             </Text>
+             <Text className="text-gray-400 font-medium tracking-wide">
+               Descubre nuestra colección completa
+             </Text>
           </View>
 
           {/* Filters */}

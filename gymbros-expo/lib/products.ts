@@ -101,7 +101,7 @@ export const PRODUCTS: Record<string, Product> = {
     description:
       "Libertad de movimiento total. Estos shorts de alto rendimiento cuentan con tela elástica y bolsillos seguros para tus llaves y teléfono.",
     images: [
-      "https://images.unsplash.com/photo-1521805103424-d8f8430e8933?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?q=80&w=800&auto=format&fit=crop",
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
     features: [
@@ -197,7 +197,7 @@ export const PRODUCTS: Record<string, Product> = {
     description:
       "Comodidad y estilo en un solo diseño. Este crop top seamless es perfecto para yoga, pilates o tu día a día activo.",
     images: [
-      "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop",
     ],
     sizes: ["XS", "S", "M", "L"],
     features: [
@@ -215,7 +215,7 @@ export const PRODUCTS: Record<string, Product> = {
     description:
       "Realza tus curvas con estos leggings de efecto push-up. Tecnología de compresión estratégica que esculpe tu silueta.",
     images: [
-      "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop",
     ],
     sizes: ["XS", "S", "M", "L", "XL"],
     features: [
@@ -267,20 +267,20 @@ export const PRODUCTS: Record<string, Product> = {
   },
   "14": {
     id: "14",
-    name: "Guantes de Entrenamiento",
-    price: 550.0,
+    name: "Banda de Resistencia Pro",
+    price: 450.0,
     category: "Accesorios",
     description:
-      "Protección y agarre superior. Estos guantes de entrenamiento cuentan con palmas acolchadas y cierre de velcro ajustable.",
+      "Set completo de bandas de resistencia para entrenamiento en casa o gimnasio. Incluye 5 niveles de resistencia para progresión gradual.",
     images: [
-      "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1598289431512-b97b0917affc?q=80&w=800&auto=format&fit=crop",
     ],
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["Set Completo"],
     features: [
-      "Palmas acolchadas",
-      "Cierre de velcro",
-      "Transpirables",
-      "Dedos abiertos",
+      "5 niveles de resistencia",
+      "Látex natural premium",
+      "Asas acolchadas incluidas",
+      "Bolsa de transporte",
     ],
     isNew: true,
   },
