@@ -12,7 +12,7 @@ const MENU_ITEMS = [
 ];
 
 export default function AccountScreen() {
-  const { user, loading, signOut } = useAuth();
+  const { user, loading, signOut, signInWithGoogle } = useAuth();
 
   const handleLogout = async () => {
     await signOut();
@@ -129,7 +129,19 @@ export default function AccountScreen() {
                 <Text className="text-gray-400 text-sm text-center mb-6 font-medium">
                   Accede a tu cuenta para ver pedidos y más
                 </Text>
-                <View className="w-full gap-3">
+                 <View className="w-full gap-3">
+                   {/* Google Button */}
+                   <Pressable 
+                     onPress={() => signInWithGoogle()}
+                     className="bg-white px-8 py-4 rounded-full w-full active:scale-95 transition-transform flex-row justify-center items-center"
+                   >
+                     <Text className="text-black font-black text-lg mr-3">G</Text>
+                     <Text className="text-black font-bold uppercase tracking-widest text-center">
+                       Continuar con Google
+                     </Text>
+                   </Pressable>
+
+                   {/* Email Button */}
                    <Pressable 
                      onPress={() => router.push('/auth/login')}
                      className="bg-primary px-8 py-4 rounded-full w-full active:scale-95 transition-transform flex-row justify-center items-center"
