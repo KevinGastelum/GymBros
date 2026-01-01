@@ -3,6 +3,7 @@ import { View, Text, TextInput, Pressable, ActivityIndicator, KeyboardAvoidingVi
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { ArrowLeft, Mail, Lock, User, Eye, EyeOff } from 'lucide-react-native';
+import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { useAuth } from '../../contexts/AuthContext';
 
 export default function SignupScreen() {
@@ -197,9 +198,19 @@ export default function SignupScreen() {
                 onPress={() => signInWithGoogle()}
                 className="bg-white py-4 rounded-xl items-center mb-8 flex-row justify-center"
               >
-                <Text className="text-black font-black text-lg mr-3">G</Text>
+                <AntDesign name="google" size={24} color="black" style={{ marginRight: 12 }} />
                 <Text className="text-black font-bold text-base">
                   Continuar con Google
+                </Text>
+              </Pressable>
+
+              {/* Apple Button */}
+              <Pressable
+                className="bg-white py-4 rounded-xl items-center mb-8 flex-row justify-center opacity-50"
+              >
+                <FontAwesome name="apple" size={24} color="black" style={{ marginRight: 12 }} />
+                <Text className="text-black font-bold text-base">
+                  Continuar con Apple
                 </Text>
               </Pressable>
 

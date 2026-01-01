@@ -3,6 +3,7 @@ import { View, Text, Pressable, ScrollView, Image, ActivityIndicator } from "rea
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { User, Heart, Package, Settings, ChevronRight, LogOut, Mail } from "lucide-react-native";
+import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import { useAuth } from "../../contexts/AuthContext";
 
 const MENU_ITEMS = [
@@ -135,9 +136,19 @@ export default function AccountScreen() {
                      onPress={() => signInWithGoogle()}
                      className="bg-white px-8 py-4 rounded-full w-full active:scale-95 transition-transform flex-row justify-center items-center"
                    >
-                     <Text className="text-black font-black text-lg mr-3">G</Text>
+                     <AntDesign name="google" size={24} color="black" style={{ marginRight: 12 }} />
                      <Text className="text-black font-bold uppercase tracking-widest text-center">
                        Continuar con Google
+                     </Text>
+                   </Pressable>
+
+                   {/* Apple Button */}
+                   <Pressable 
+                     className="bg-white px-8 py-4 rounded-full w-full active:scale-95 transition-transform flex-row justify-center items-center opacity-50"
+                   >
+                     <FontAwesome name="apple" size={24} color="black" style={{ marginRight: 12 }} />
+                     <Text className="text-black font-bold uppercase tracking-widest text-center">
+                       Continuar con Apple
                      </Text>
                    </Pressable>
 
