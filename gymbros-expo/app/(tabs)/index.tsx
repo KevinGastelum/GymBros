@@ -137,10 +137,10 @@ export default function HomeScreen() {
         style={[headerStyle, { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: 'rgba(0,0,0,0.8)', paddingTop: 50, paddingBottom: 10, paddingHorizontal: 20 }]}
         entering={FadeInDown.duration(800).delay(500).springify()}
       >
-         <View className="flex-row justify-between items-center">
+         <View className="flex-row justify-center items-center">
             <Animated.Text 
               entering={FadeInUp.duration(1000).springify().damping(12)}
-              className="text-xl font-black text-white tracking-tight"
+              className="text-xl font-black text-white tracking-tighter"
               style={{ color: '#FFFFFF' }}
             >
               GYM<Text className="text-primary italic">BROS</Text>
@@ -172,8 +172,8 @@ export default function HomeScreen() {
                style={{ position: 'absolute', left: 0, right: 0, top: 0, height: 180, opacity: 0.9 }}
             />
             
-            {/* Initial Header Overlay with Parallax */}
-            <Animated.View style={[logoParallaxStyle, { position: 'absolute', top: 56, left: 24, zIndex: 10, flexDirection: 'row' }]}>
+            {/* Initial Header Overlay - Centered with Parallax */}
+            <Animated.View style={[logoParallaxStyle, { position: 'absolute', top: 56, left: 0, right: 0, zIndex: 10, flexDirection: 'row', justifyContent: 'center' }]}>
                <Animated.Text 
                  entering={FadeInUp.duration(1000).delay(300).springify().damping(12)}
                  className="text-2xl font-black text-white tracking-tighter shadow-lg"
