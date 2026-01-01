@@ -154,6 +154,11 @@ export default function LoginScreen() {
                 <Text className="text-primary font-bold">Regístrate</Text>
               </Pressable>
             </View>
+
+            {/* Version Check */}
+            <View className="mt-8 items-center">
+                <Text className="text-gray-700 text-xs">v1.1.0 (Deployment Test)</Text>
+            </View>
           </View>
         </KeyboardAvoidingView>
       </SafeAreaView>
