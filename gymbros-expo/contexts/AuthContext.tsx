@@ -20,16 +20,44 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    // Handle OAuth callback - check for tokens in URL hash
+    const handleOAuthCallback = async () => {
+      if (typeof window !== 'undefined') {
+        const hashParams = new URLSearchParams(window.location.hash.substring(1));
+        const accessToken = hashParams.get('access_token');
+        const refreshToken = hashParams.get('refresh_token');
+
+        if (accessToken && refreshToken) {
+          // Set session from URL tokens
+          const { data, error } = await supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken,
+          });
+
+          if (data.session) {
+            setSession(data.session);
+            setUser(data.session.user);
+            // Clean up URL
+            window.history.replaceState(null, '', window.location.pathname);
+          }
+          setLoading(false);
+          return;
+        }
+      }
+
+      // Get initial session (for non-OAuth cases)
+      const { data: { session } } = await supabase.auth.getSession();
       setSession(session);
       setUser(session?.user ?? null);
       setLoading(false);
-    });
+    };
+
+    handleOAuthCallback();
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
+        console.log('Auth state changed:', event, session?.user?.email);
         setSession(session);
         setUser(session?.user ?? null);
         setLoading(false);
